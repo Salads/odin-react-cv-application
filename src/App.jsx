@@ -1,17 +1,25 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 
+import { createEnum } from './Enum.jsx';
+import ContactArea from './components/ContactArea.jsx';
+
+const AppState = createEnum(
+  'Fresh', 
+  'EditContact', 
+  'EditEducation', 
+  'EditExperience'
+);
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [appState, setAppState] = useState(AppState.Fresh);
 
   return (
-    <>
-      
-    </>
-  )
+    <div className='app-root'>
+      <h1>Resume Builder</h1>
+      <ContactArea></ContactArea>
+    </div>
+  );
 }
 
 export default App
