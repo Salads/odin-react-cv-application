@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgb(63, 150, 201);
+	background-color: var(--color-app-header-background);
 	width: 100%;
 }
 
@@ -16,7 +16,7 @@
 	width: 100%;
 	padding: 16px 0;
 
-	background: rgb(121, 194, 236);
+	background: var(--color-app-header-toolbar-background);
 }
 
 .checkbox-label {
@@ -25,6 +25,6 @@
 }
 
 .checkbox {
-	width: 24px;
-	height: 24px;
+	width: var(--size-toolbar-checkbox);
+	height: var(--size-toolbar-checkbox);
 }

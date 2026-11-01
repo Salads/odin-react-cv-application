@@ -11,7 +11,19 @@
 	align-items: center;
 	gap: 16px;
 	width: 100%;
-	margin-left: 128px;
+
+	& > :last-child {
+		flex: 1;
+	}
+}
+
+.experience-header-edit {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 16px;
+	width: 100%;
+	margin-left: -80px;
 
 	& > :last-child {
 		flex: 1;
@@ -23,28 +35,27 @@
 	flex-direction: row;
 	justify-content: flex-end;
 	gap: 8px;
-	margin-right: 128px;
 }
 
 .remove-button {
 	padding: 0;
 	margin: 0;
-	background-color: rgb(194, 0, 0);
+	background-color: var(--color-button-remove-background);
 	border: none;
 
-	width: 24px;
-	height: 24px;
+	width: var(--size-button-item);
+	height: var(--size-button-item);
 	border-radius: 25%;
 	box-shadow: 2px 2px 5px gray;
 
 	&:hover {
-		background-color: rgb(255, 0, 0);
+		background-color: var(--color-button-remove-background-hover);
 	}
 
 	&:active {
 		box-shadow: none;
 	}
 
-	color: white;
-	font-size: 20px;
+	color: var(--color-button-text);
+	font-size: var(--fontsize-button-item);
 }

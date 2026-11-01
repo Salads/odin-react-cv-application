@@ -1,4 +1,30 @@
 
+:root {
+
+	--size-toolbar-checkbox: 24px;
+
+	--size-button-section-header: 24px;
+	--fontsize-button-section-header: 22px;
+
+	--size-button-item: 22px;
+	--fontsize-button-item: 18px;
+
+	--size-button-sub-item: 20px;
+	--fontsize-button-sub-item: 18px;
+
+	--boxshadow-button: 2px 2px 5px gray;
+
+	--color-app-header-background: rgb(63, 150, 201);
+	--color-app-header-toolbar-background: rgb(121, 194, 236);
+	--color-content-background: rgb(87, 86, 86);
+	--color-resume-background: white;
+	--color-button-add-background: rgb(0, 216, 0);
+	--color-button-add-background-hover: rgb(56, 255, 56);
+	--color-button-remove-background: rgb(194, 0, 0);
+	--color-button-remove-background-hover: rgb(255, 0, 0);
+	--color-button-text: white;
+}
+
 body {
 	padding: 0;
 	margin: 0;
