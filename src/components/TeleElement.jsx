@@ -50,7 +50,7 @@ function TeleElement() {
 		);
 	}
 	else {
-		let displayText = ( text ? text : 'Phone: ' );
+		let displayText = ( text ? text : placeholder );
 		return (
 			<p onClick={onDisplayClick}>{displayText}</p>
 		);
