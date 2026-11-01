@@ -4,7 +4,7 @@
 
 	--size-resume-width: 8.5in;
 	--size-resume-height: 11in;
-	--padding-resume-vert: 16px;
+	--padding-resume-vert: 32px;
 	--padding-resume-horz: 64px;
 
 	--size-button-section-header: 24px;
@@ -40,4 +40,8 @@ body {
 	align-items: center;
 	
 	width: 100%;
+}
+
+p {
+	margin: 0;
 }

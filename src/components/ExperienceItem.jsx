@@ -53,16 +53,18 @@ function ExperienceItem(props) {
 					<DateElement></DateElement>
 				</div>
 			</div>
-			{ props.showEditUI && 
-				<ListHeader 
-					showEditUI={props.showEditUI}
-					text="Responsibilities" 
-					onAdd={addItem}>
-				</ListHeader> 
-			}
-			<ul>
-				{ responsibilities.map((item) => generateItem(item, removeItem, props)) }
-			</ul>
+			<div className="responsibilities-container">
+				{ props.showEditUI && 
+					<ListHeader 
+						showEditUI={props.showEditUI}
+						text="Responsibilities" 
+						onAdd={addItem}>
+					</ListHeader> 
+				}
+				<ul>
+					{ responsibilities.map((item) => generateItem(item, removeItem, props)) }
+				</ul>
+			</div>
 		</div>
 	);
 }

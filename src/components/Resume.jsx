@@ -10,10 +10,12 @@ function Resume(props) {
 	
 	return (
 		<div className="resume-container">
-			<LargeTextElement placeholder="Your Name Here"></LargeTextElement>
-			<div className="contact-info-container">
-				<EmailElement></EmailElement>
-				<TeleElement></TeleElement>
+			<div className="contact-container">
+				<LargeTextElement placeholder="Your Name Here"></LargeTextElement>
+				<div className="contact-info-container">
+					<EmailElement></EmailElement>
+					<TeleElement></TeleElement>
+				</div>
 			</div>
 			<div className="resume-details-container">
 				<EducationArea showEditUI={props.showEditUI}></EducationArea>

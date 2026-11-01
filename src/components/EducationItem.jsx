@@ -5,7 +5,7 @@ import DateElement from './DateElement.jsx';
 
 function EducationItem(props) {
 
-	let className = (props.showEditUI ? "education-content-edit" : "education-content");
+	let className = (props.showEditUI ? "education-item-edit" : "education-item");
 
 	return (
 		<div className={className}>

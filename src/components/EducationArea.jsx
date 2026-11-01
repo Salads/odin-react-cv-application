@@ -44,7 +44,9 @@ function EducationArea(props) {
 				showEditUI={props.showEditUI}
 				onAddItem={onAddItem}>
 			</SectionHeader>
-			{items.map((elem) => generateItem(elem, onRemoveItem, props))}
+			<div className='education-item-container'>
+				{items.map((elem) => generateItem(elem, onRemoveItem, props))}
+			</div>
 		</div>
 	);
 }

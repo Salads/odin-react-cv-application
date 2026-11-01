@@ -1,5 +1,5 @@
-.education-content,
-.education-content-edit {
+.education-item,
+.education-item-edit {
 	--gap: 16px;
 
 	position: relative;
@@ -17,8 +17,8 @@
 	}
 }
 
-.education-content-edit {
+.education-item-edit {
 	--extra-size: calc(var(--gap) + var(--size-button-item));
-	left: calc(var(--extra-size) / -2);
+	left: calc(var(--extra-size) * -1);
 	width: calc(100% + var(--extra-size));
 }
