@@ -1,5 +1,12 @@
 
-.education-item-container {
+.experience-area {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.experience-item-container {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;

@@ -6,3 +6,11 @@
 
 	width: 100%;
 }
+
+.education-item-container {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	width: 100%;
+}

@@ -44,13 +44,15 @@ function ExperienceArea(props) {
 	}
 
 	return (
-		<div className="education-area">
+		<div className="experience-area">
 			<SectionHeader 
 				text="Experience" 
 				showEditUI={props.showEditUI}
 				onAddItem={onAddItem}
 			></SectionHeader>
-			{items.map((elem) => generateItem(elem, onRemoveItem, props))}
+			<div className="experience-item-container">
+				{items.map((elem) => generateItem(elem, onRemoveItem, props))}
+			</div>
 		</div>
 	);
 }
