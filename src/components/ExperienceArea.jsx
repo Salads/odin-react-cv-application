@@ -16,7 +16,11 @@ function createNewItem() {
 
 function generateItem(obj, removeHook) {
 	return (
-		<ExperienceItem data={obj} onRemove={removeHook}></ExperienceItem>
+		<ExperienceItem 
+			key={obj.key}
+			data={obj} 
+			onRemove={() => removeHook(obj.key)}>
+		</ExperienceItem>
 	);
 }
 
@@ -34,8 +38,8 @@ function ExperienceArea(props) {
 		setItems([...items, createNewItem()]);
 	}
 
-	function onRemoveItem(e) {
-		let newArray = items.filter((elem) => elem.key !== e.target.dataset.key);
+	function onRemoveItem(key) {
+		let newArray = items.filter((elem) => elem.key !== key);
 		setItems([...newArray]);
 	}
 
