@@ -1,23 +1,30 @@
 
+.list-item {
+	position: relative;
+	margin: 4px 0;
+}
+
 .list-item-remove-button {
+	position: absolute;
+	left: -50px;
 	padding: 0;
-	margin: 16px 0;
-	background-color: rgb(194, 0, 0);
+	margin: 0;
+	background-color: var(--color-button-remove-background);
 	border: none;
 
-	width: 24px;
-	height: 24px;
+	width: var(--size-button-sub-item);
+	height: var(--size-button-sub-item);
 	border-radius: 25%;
-	box-shadow: 2px 2px 5px gray;
+	box-shadow: var(--boxshadow-button);
 
 	&:hover {
-		background-color: rgb(255, 0, 0);
+		background-color: var(--color-button-remove-background-hover);
 	}
 
 	&:active {
 		box-shadow: none;
 	}
 
-	color: white;
-	font-size: 20px;
+	color: var(--color-button-text);
+	font-size: var(--fontsize-button-sub-item);
 }

@@ -36,7 +36,18 @@ function ListItemTextElement(props) {
 	else {
 		const displayText = (text ? text : props.placeholder);
 		return (
-			<li onClick={onDisplayClick}>{displayText}</li>
+			<li 
+				className='list-item'
+				onClick={onDisplayClick}>
+				{ props.showEditUI && 
+					<button 
+						className='list-item-remove-button'
+						onClick={props.onRemove}>
+							x
+						</button>
+				}
+				{displayText}
+			</li>
 		);
 	}
 }
