@@ -1,0 +1,27 @@
+
+.resume-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	width: 8.5in;
+	height: 11in;
+	background-color: white;
+
+	margin: 32px;
+}
+
+.contact-info-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	width: 100%;
+}
+
+.resume-details-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}

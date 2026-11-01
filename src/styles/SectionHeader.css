@@ -1,0 +1,11 @@
+
+.section-title {
+	margin-bottom: 0;
+}
+
+.section-line {
+	width: 85%;
+	height: 2px;
+
+	background-color: gray;
+}

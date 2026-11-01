@@ -2,26 +2,22 @@ import { useState } from 'react'
 import './App.css'
 
 import { createEnum } from './Enum.jsx';
-import ContactArea from './components/ContactArea.jsx';
-import EducationArea from './components/EducationArea.jsx';
-
-const AppState = createEnum(
-  'Fresh', 
-  'EditContact', 
-  'EditEducation', 
-  'EditExperience'
-);
+import Header from './components/Header.jsx';
+import Content from './components/Content.jsx';
 
 function App() {
-  const [appState, setAppState] = useState(AppState.Fresh);
+  const [showControls, setShowControls] = useState(true);
+
+  function onShowControlsChanged(e) {
+    setShowControls(e.target.value);
+  }
 
   return (
     <div className='app-root'>
-      <h1>Resume Builder</h1>
-      <ContactArea></ContactArea>
-      <EducationArea></EducationArea>
+      <Header onShowControlsChanged={onShowControlsChanged}></Header>
+      <Content showControls={showControls}></Content>
     </div>
   );
 }
 
-export default App
+export default App;
