@@ -1,7 +1,24 @@
 import "../styles/ExperienceArea.css";
+import { useState } from "react";
 import SectionHeader from "./SectionHeader.jsx";
-import TextElement from "./TextElement.jsx";
-import DateElement from "./DateElement.jsx";
+import ExperienceItem from "./ExperienceItem.jsx";
+
+function createNewItem() {
+	return {
+		key: crypto.randomUUID(),
+		name: "Company Name",
+		position: "Position Title",
+		responsibilities: [],
+		dateFrom: new Date(),
+		dateTo: new Date()
+	};
+}
+
+function generateItem(obj, removeHook) {
+	return (
+		<ExperienceItem data={obj} onRemove={removeHook}></ExperienceItem>
+	);
+}
 
 function ExperienceArea(props) {
 	/*
@@ -11,19 +28,25 @@ function ExperienceArea(props) {
 		date from and until when you worked for that company
 	*/
 
+	const [items, setItems] = useState([]);
+
+	function onAddItem(e) {
+		setItems([...items, createNewItem()]);
+	}
+
+	function onRemoveItem(e) {
+		let newArray = items.filter((elem) => elem.key !== e.target.dataset.key);
+		setItems([...newArray]);
+	}
+
 	return (
 		<div className="education-area">
-			<SectionHeader text="Experience"></SectionHeader>
-			<div className="experience-container">
-				<div className="experience-header">
-					<TextElement placeholder="Company Name"></TextElement>
-					<TextElement placeholder="Position Title"></TextElement>
-					<div className="experience-timerange">
-						<DateElement></DateElement> <p>to</p> <DateElement></DateElement>
-					</div>
-				</div>
-				<TextElement className="responsibilities" placeholder="Responsibilities"></TextElement>
-			</div>
+			<SectionHeader 
+				text="Experience" 
+				showControls={props.showControls}
+				onAddItem={onAddItem}
+			></SectionHeader>
+			{items.map((elem) => generateItem(elem, onRemoveItem))}
 		</div>
 	);
 }
