@@ -8,7 +8,6 @@ function createNewItem() {
 		key: crypto.randomUUID(),
 		name: "Company Name",
 		position: "Position Title",
-		responsibilities: [],
 		dateFrom: new Date(),
 		dateTo: new Date()
 	};
