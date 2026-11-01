@@ -7,11 +7,11 @@ function Header(props) {
 			<h1>Resume Builder</h1>
 			<div className="toolbar-flex">
 				<label className="checkbox-label">
-					Edit Mode
+					Show Edit UI
 					<input 
 						className="checkbox" 
 						type="checkbox"
-						defaultValue={false} 
+						defaultChecked={true}
 						onChange={props.onShowControlsChanged}
 					></input>
 				</label>
