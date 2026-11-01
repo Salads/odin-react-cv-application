@@ -12,13 +12,14 @@ function createItem() {
 	};
 }
 
-function generateItem(item, removeHook) {
+function generateItem(item, removeHook, props) {
 	return (
 		<ListItemTextElement 
 			key={item.key} 
 			data-key={item.key}
 			onRemove={() => removeHook(item.key)}
-			placeholder={item.responsibility}>
+			placeholder={item.responsibility}
+			showEditUI={props.showEditUI}>
 		</ListItemTextElement>
 	);
 }
@@ -36,10 +37,14 @@ function ExperienceItem(props) {
 		setResponsibilities([...newArray]);
 	}
 
+	let headerClass = (props.showEditUI ? "experience-header-edit" : "experience-header");
+
 	return (
 		<div data-key={props.data.key} className="experience-container">
-			<div className="experience-header">
-				<button onClick={props.onRemove} className="remove-button">x</button>
+			<div className={headerClass}>
+				{ props.showEditUI && 
+					<button onClick={props.onRemove} className="remove-button">x</button> 
+				}
 				<TextElement placeholder="Company Name"></TextElement>
 				<TextElement placeholder="Position Title"></TextElement>
 				<div className="experience-timerange">
@@ -48,9 +53,15 @@ function ExperienceItem(props) {
 					<DateElement></DateElement>
 				</div>
 			</div>
-			{ <ListHeader text="Responsibilities" onAdd={addItem}></ListHeader> }
+			{ props.showEditUI && 
+				<ListHeader 
+					showEditUI={props.showEditUI}
+					text="Responsibilities" 
+					onAdd={addItem}>
+				</ListHeader> 
+			}
 			<ul>
-				{ responsibilities.map((item) => generateItem(item, removeItem)) }
+				{ responsibilities.map((item) => generateItem(item, removeItem, props)) }
 			</ul>
 		</div>
 	);

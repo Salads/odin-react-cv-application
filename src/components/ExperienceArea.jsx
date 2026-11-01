@@ -13,12 +13,13 @@ function createNewItem() {
 	};
 }
 
-function generateItem(obj, removeHook) {
+function generateItem(obj, removeHook, props) {
 	return (
 		<ExperienceItem 
 			key={obj.key}
 			data={obj} 
-			onRemove={() => removeHook(obj.key)}>
+			onRemove={() => removeHook(obj.key)}
+			showEditUI={props.showEditUI}>
 		</ExperienceItem>
 	);
 }
@@ -46,10 +47,10 @@ function ExperienceArea(props) {
 		<div className="education-area">
 			<SectionHeader 
 				text="Experience" 
-				showControls={props.showControls}
+				showEditUI={props.showEditUI}
 				onAddItem={onAddItem}
 			></SectionHeader>
-			{items.map((elem) => generateItem(elem, onRemoveItem))}
+			{items.map((elem) => generateItem(elem, onRemoveItem, props))}
 		</div>
 	);
 }

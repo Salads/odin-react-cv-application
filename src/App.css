@@ -1,7 +1,11 @@
 
 :root {
-
 	--size-toolbar-checkbox: 24px;
+
+	--size-resume-width: 8.5in;
+	--size-resume-height: 11in;
+	--padding-resume-vert: 16px;
+	--padding-resume-horz: 64px;
 
 	--size-button-section-header: 24px;
 	--fontsize-button-section-header: 22px;

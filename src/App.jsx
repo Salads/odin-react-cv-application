@@ -9,13 +9,13 @@ function App() {
   const [showControls, setShowControls] = useState(true);
 
   function onShowControlsChanged(e) {
-    setShowControls(e.target.value);
+    setShowControls(e.target.checked);
   }
 
   return (
     <div className='app-root'>
       <Header onShowControlsChanged={onShowControlsChanged}></Header>
-      <Content showControls={showControls}></Content>
+      <Content showEditUI={showControls}></Content>
     </div>
   );
 }

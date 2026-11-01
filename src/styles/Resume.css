@@ -5,12 +5,12 @@
 	flex-direction: column;
 	align-items: center;
 	
-	width: 8.5in;
-	min-height: 11in;
+	width: var(--size-resume-width);
+	min-height: var(--size-resume-height);
 	background-color: var(--color-resume-background);
 
 	margin: 32px;
-	padding: 16px 64px;
+	padding: var(--padding-resume-vert) var(--padding-resume-horz);
 }
 
 .contact-info-container {

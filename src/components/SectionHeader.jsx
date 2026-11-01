@@ -6,11 +6,13 @@ function SectionHeader(props) {
 		<>
 			<div className="section-container">
 				<h2 className="section-title">{props.text}</h2>
-				<button 
-					className="add-item-button"
-					onClick={props.onAddItem}>
-					+
-				</button>
+				{ props.showEditUI &&	
+					<button 
+						className="add-item-button"
+						onClick={props.onAddItem}>
+						+
+					</button>
+				}
 			</div>
 			<hr className="section-line"></hr>
 		</>

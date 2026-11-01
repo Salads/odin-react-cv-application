@@ -13,17 +13,18 @@ function createItem() {
 	};
 }
 
-function generateItem(obj, removeHook) {
+function generateItem(obj, removeHook, props) {
 	return (
 		<EducationItem
 			key={obj.key}
 			data={obj}
+			showEditUI={props.showEditUI}
 			onRemove={() => removeHook(obj.key)}>
 		</EducationItem>
 	);
 }
 
-function EducationArea() {
+function EducationArea(props) {
 
 	const [items, setItems] = useState([]);
 
@@ -38,8 +39,12 @@ function EducationArea() {
 
 	return(
 		<div className='education-area'>
-			<SectionHeader text="Education" onAddItem={onAddItem} ></SectionHeader>
-			{items.map((elem) => generateItem(elem, onRemoveItem))}
+			<SectionHeader 
+				text="Education" 
+				showEditUI={props.showEditUI}
+				onAddItem={onAddItem}>
+			</SectionHeader>
+			{items.map((elem) => generateItem(elem, onRemoveItem, props))}
 		</div>
 	);
 }

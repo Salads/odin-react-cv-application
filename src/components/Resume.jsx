@@ -16,8 +16,8 @@ function Resume(props) {
 				<TeleElement></TeleElement>
 			</div>
 			<div className="resume-details-container">
-				<EducationArea></EducationArea>
-				<ExperienceArea></ExperienceArea>
+				<EducationArea showEditUI={props.showEditUI}></EducationArea>
+				<ExperienceArea showEditUI={props.showEditUI}></ExperienceArea>
 			</div>
 		</div>
 	);

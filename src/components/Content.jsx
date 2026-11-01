@@ -6,7 +6,10 @@ function Content(props) {
 
 	return (
 		<div className="content">
-			<Resume showControls={props.showControls}></Resume>
+			<Resume 
+				showControls={props.showControls}
+				showEditUI={props.showEditUI}>
+			</Resume>
 		</div>
 	);
 }

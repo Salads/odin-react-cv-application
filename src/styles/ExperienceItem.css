@@ -5,11 +5,14 @@
 	width: 100%;
 }
 
-.experience-header {
+.experience-header,
+.experience-header-edit {
+	--gap: 16px;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 16px;
+	gap: var(--gap);
 	width: 100%;
 
 	& > :last-child {
@@ -18,16 +21,10 @@
 }
 
 .experience-header-edit {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 16px;
-	width: 100%;
-	margin-left: -80px;
-
-	& > :last-child {
-		flex: 1;
-	}
+	position: relative;
+	--extra-size: calc(var(--size-button-item) + var(--gap));
+	left: calc(var(--extra-size) / -2);
+	width: calc(100% + var(--extra-size));
 }
 
 .experience-timerange {
